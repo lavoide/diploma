@@ -8,7 +8,7 @@ namespace diploma.Models
     [Table("users")]
     public class User       
     {
-        public long Id { get; set; }
+        public long UserId { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
