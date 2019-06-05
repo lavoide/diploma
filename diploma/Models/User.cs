@@ -15,4 +15,16 @@ namespace diploma.Models
         public string Name { get; set; }
         public string IsAdmin { get; set; }
     }
+    [Table("recipes")]
+    public class Recipe
+    {
+        public long RecipeId { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string Instructions { get; set; }
+        public string Category { get; set; }
+        public string Yield { get; set; }
+        public string Img { get; set; }
+
+    }
 }

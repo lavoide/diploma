@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using diploma.Models;
+using System.Data.Entity;
 
 namespace diploma.Controllers
 {
@@ -46,7 +47,14 @@ namespace diploma.Controllers
 
             return user;
         }
-        // POST: api/User
+        // GET: api/User/John
+        //[HttpGet("{name}")]
+        //public async Task<ActionResult<User>> GetUser(string name)
+        //{
+        //    var user = _context.Users.Where(a => a.Name == name);
+        //    return user;
+        //}
+        //POST: api/User
         [HttpPost]
         public async Task<ActionResult<User>> PostUser(User user)
         {
@@ -64,7 +72,7 @@ namespace diploma.Controllers
                 return BadRequest();
             }
 
-            _context.Entry(user).State = EntityState.Modified;
+            _context.Entry(user).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             await _context.SaveChangesAsync();
 
             return NoContent();
